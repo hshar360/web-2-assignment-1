@@ -26,7 +26,7 @@
             display stock and company information.<br><br>
             Developed by: <strong>Haniya</strong><br>
             Technologies used: PHP, SQLite, HTML, and CSS.<br><br>
-            GitHub Repository: <a href="https://github.com/yourusername/yourrepo" target="_blank">View on GitHub</a>
+            GitHub Repository: <a href="https://github.com/hshar360/web-2-assignment-1" target="_blank">View on GitHub</a>
         </p>
     </main>
 </body>

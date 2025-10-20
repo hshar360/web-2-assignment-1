@@ -1,137 +1,240 @@
-/* layout*/
+/* 
+  CSS file 
+  Some sections of this stylesheet (layout design, box styling, and color theme)
+  were created or refined with the assistance of ChatGPT (OpenAI, 2025).
+*/
+
+
+
+/* ===========================
+   GENERAL LAYOUT & THEME
+=========================== */
+body {
+  font-family: "Poppins", "Comic Sans MS", cursive, sans-serif;
+  background: linear-gradient(180deg, #f5f7fa 0%, #e6ecf3 100%);
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================
+   NAVIGATION BAR
+=========================== */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1a73e8, #4285f4);
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.site-title {
+  font-weight: bold;
+  font-size: 1.6em;
+  color: white;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.1);
+  padding: 8px 16px;
+  margin-left: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  background-color: white;
+  color: #1a73e8;
+}
+
+/* ===========================
+   MAIN DASHBOARD LAYOUT
+=========================== */
 .portfolio-layout {
   display: flex;
   gap: 25px;
   align-items: flex-start;
+  padding: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-/* left side */
+/* ===========================
+   USERS PANEL (LEFT SIDE)
+=========================== */
 .users-panel {
   flex: 1;
-  border: 1px solid #aaa;
-  padding: 15px;
-  background-color: #f9f9f9;
-  min-width: 220px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  min-width: 230px;
+}
+
+.users-panel h2 {
+  color: #1a73e8;
+  font-size: 1.3em;
+  margin-bottom: 15px;
 }
 
 .user-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
-  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  transition: background 0.2s ease;
+}
+
+.user-card:hover {
+  background-color: #f5f7fa;
 }
 
 .btn {
-  background-color: #0d6efd;
+  background-color: #1a73e8;
   color: white;
   text-decoration: none;
   border-radius: 6px;
-  padding: 5px 10px;
+  padding: 5px 12px;
   font-size: 0.9em;
-}
-
-.btn:hover {
-  background-color: #084298;
-}
-
-/* right side */
-.portfolio-panel {
-  flex: 3;
-  border: 1px solid #aaa;
-  padding: 20px;
-  background-color: #fff;
-}
-
-.info-message {
-  text-align: center;
-  font-style: italic;
-  color: #0d6efd;
-  margin-top: 50px;
-}
-
-/* boxes */
-.summary-boxes {
-  display: flex;
-  gap: 20px;
-  justify-content: flex-start;
-  margin-bottom: 20px;
-}
-
-.summary-item {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f4f6f9;
-  width: 180px;
-  text-align: center;
-  padding: 10px;
+  transition: all 0.25s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.btn:hover {
+  background-color: #155cc1;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   PORTFOLIO PANEL (RIGHT SIDE)
+=========================== */
+.portfolio-panel {
+  flex: 3;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 25px;
+}
+
+.portfolio-panel h2 {
+  color: #1a1a1a;
+  font-size: 1.4em;
+  margin-top: 10px;
+}
+
+/* Info message */
+.info-message {
+  text-align: center;
+  font-style: italic;
+  color: #1a73e8;
+  margin-top: 50px;
+}
+
+/* ===========================
+   SUMMARY BOXES
+=========================== */
+.summary-boxes {
+  display: flex;
+  gap: 25px;
+  justify-content: flex-start;
+  margin: 20px 0 30px;
+  flex-wrap: wrap;
+}
+
+.summary-item {
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 200px;
+  text-align: center;
+  padding: 15px 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.summary-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
 .summary-item h3 {
-  color: #555;
+  color: #1a73e8;
   font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .summary-item p {
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: bold;
+  color: #000;
 }
 
-/* stock table */
+/* ===========================
+   PORTFOLIO TABLE
+=========================== */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
 th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
+  border: 1px solid #ddd;
+  padding: 12px 14px;
   text-align: left;
 }
 
 th {
-  background-color: #f4f6f9;
+  background: #1a73e8;
+  color: white;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #f3f6fb;
+}
+
+tr:hover {
+  background-color: #eaf1fb;
+  transition: 0.2s;
 }
 
 td a {
-  color: #0d6efd;
+  color: #1a73e8;
   text-decoration: none;
+  font-weight: 500;
 }
 
 td a:hover {
   text-decoration: underline;
 }
 
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 900px) {
+  .portfolio-layout {
+    flex-direction: column;
+  }
 
-/*navigation*/
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #000;
-    padding: 10px 20px;
-    background-color: #fff;
-}
+  .users-panel, .portfolio-panel {
+    width: 100%;
+  }
 
-.site-title {
-    font-weight: bold;
-    font-size: 1.4em;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-    border: 1px solid #000;
-    border-radius: 8px;
-    background-color: #ddd;
-    padding: 6px 14px;
-    margin-left: 10px;
-    font-weight: bold;
-}
-
-nav a:hover, nav a.active {
-    background-color: #0d6efd;
-    color: white;
+  .summary-boxes {
+    justify-content: center;
+  }
 }

@@ -47,11 +47,13 @@ try {
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title><?php $company['name'] ?> – Company Details</title>
+    <title><?php echo $company['name']; ?> – Company Details</title>
     <link rel="stylesheet" href="css/company.css">
 
 
 </head>
+
+
 <body>
     <!-- navigation menu -->
     <div class="nav-container">
@@ -103,8 +105,39 @@ try {
 
         <!--Stock history table--> 
         <section class="stock-history">
-            <h2>Stock History (<?php echo $company['symbol'] ?>)</h2>
+            
 
+            <!-- Description Section -->
+                <section class="description">
+                    <h2>Description</h2>
+                        <p style="white-space: pre-line;">
+                            <?php echo $company['description'] ?>
+                        </p>
+                </section>
+
+            </div>
+                <!-- Stats -->
+                <div class="stats-box">
+                    <div class="stat">
+                        <h3>History High</h3>
+                        <p>$94.45</p>
+                    </div>
+                    <div class="stat">
+                        <h3>History Low</h3>
+                        <p>$78.74</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Total Volume</h3>
+                        <p>45,564,765</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Average Volume</h3>
+                        <p>164,503</p>
+                    </div>
+                </div>
+
+                
+                <h2>Stock History (<?php echo $company['symbol'] ?>)</h2>
                 <div class="history-layout">
                 
                     <div class="history-table">
@@ -139,45 +172,14 @@ try {
                             }
                         ?>
             
-            </div>
-                <!-- Stats -->
-                <div class="stats-box">
-                    <div class="stat">
-                        <h3>History High</h3>
-                        <p>$94.45</p>
-                    </div>
-                    <div class="stat">
-                        <h3>History Low</h3>
-                        <p>$78.74</p>
-                    </div>
-                    <div class="stat">
-                        <h3>Total Volume</h3>
-                        <p>45,564,765</p>
-                    </div>
-                    <div class="stat">
-                        <h3>Average Volume</h3>
-                        <p>164,503</p>
-                    </div>
-                </div>
+            
             </div>
         </section>
 
 
-        <!-- Description Section -->
-        <section class="description">
-            <h2>Description</h2>
-            <p style="white-space: pre-line;">
-                <?php $company['description'] ?>
-            </p>
-        </section>
         
-        <p>
-            <?php
-                $desc = $company['description'];
-                $safeDesc = $desc;
-                echo $safeDesc;
-            ?>
-</p>
+        
+        
 
         <p>
             <a href="index.php">&larr; Back to main paget</a>

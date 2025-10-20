@@ -1,44 +1,244 @@
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
-}
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    text-align: left;
-}
-th {
-    background-color: #f2f2f2;
+/* 
+  CSS file 
+  Some sections of this stylesheet (layout design, box styling, and color theme)
+  were created or refined with the assistance of ChatGPT (OpenAI, 2025).
+*/
+
+
+/* ===========================
+   GENERAL LAYOUT & THEME
+=========================== */
+body {
+  font-family: "Poppins", "Comic Sans MS", cursive, sans-serif;
+  background: linear-gradient(180deg, #f5f7fa 0%, #e6ecf3 100%);
+  color: #222;
+  margin: 0;
+  padding: 0;
 }
 
-/*navigation*/
+/* ===========================
+   HEADER & NAVIGATION
+=========================== */
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #000;
-    padding: 10px 20px;
-    background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1a73e8, #4285f4);
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .site-title {
-    font-weight: bold;
-    font-size: 1.4em;
+  font-weight: bold;
+  font-size: 1.6em;
+  color: white;
 }
 
 nav a {
-    text-decoration: none;
-    color: black;
-    border: 1px solid #000;
-    border-radius: 8px;
-    background-color: #ddd;
-    padding: 6px 14px;
-    margin-left: 10px;
-    font-weight: bold;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.1);
+  padding: 8px 16px;
+  margin-left: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 nav a:hover, nav a.active {
-    background-color: #0d6efd;
-    color: white;
+  background-color: white;
+  color: #1a73e8;
+}
+
+/* ===========================
+   COMPANY TITLE & INFO BOXES
+=========================== */
+.container h1 {
+  text-align: center;
+  color: #1a1a1a;
+  margin: 50px 0 30px;
+  font-size: 2em;
+}
+
+.company-info {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap; /* prevent wrapping */
+  gap: 20px;
+  max-width: 1300px; /* expanded space for all boxes */
+  margin: 0 auto 40px;
+}
+
+.company-info p {
+  width: 180px; /* smaller width so all 6 fit */
+  height: 180px;
+}
+
+
+/* Box styling */
+.company-info p {
+  position: relative;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  width: 200px;
+  height: 180px;
+  padding-top: 45px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.company-info p:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Box title */
+.company-info strong {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1a73e8;
+  color: white;
+  border-radius: 12px 12px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 0;
+  box-shadow: inset 0 -2px 3px rgba(0,0,0,0.1);
+}
+
+.company-info a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+.company-info a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   DESCRIPTION
+=========================== */
+.description {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px 35px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.description h2 {
+  color: #1a73e8;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   STAT BOXES
+=========================== */
+.stats-box {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 40px auto;
+}
+
+.stat {
+  background-color: white;
+  border-radius: 10px;
+  width: 220px;
+  height: 120px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.stat h3 {
+  margin: 5px 0;
+  color: #1a73e8;
+  font-size: 16px;
+}
+
+/* ===========================
+   TABLE STYLING
+=========================== */
+.stock-history {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.stock-history h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  border-left: 4px solid #1a73e8;
+  padding-left: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background: #1a73e8;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f3f6fb;
+}
+
+tr:hover {
+  background: #eaf1fb;
+}
+
+/* ===========================
+   BACK LINK
+=========================== */
+main a {
+  display: inline-block;
+  margin: 30px;
+  text-decoration: none;
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+main a:hover {
+  text-decoration: underline;
 }
